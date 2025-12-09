@@ -20,8 +20,8 @@ export default function StockCard({ stock }: { stock: any }) {
               {stock.ticker} 
               <span className="text-slate-500 font-normal ml-1">· {stock.name}</span>
             </h3>
-            <p className="text-sm text-slate-500 mt-1">{stock.sector}</p>
-          </div>
+          <p className="text-sm text-slate-500 mt-1">{stock.sector}</p>
+        </div>
           <div className="text-right ml-4">
             <div className={`text-xl font-bold ${stock.changePct >= 0 ? "text-green-600" : "text-red-600"}`}>
               ${stock.price.toFixed(2)}
@@ -30,17 +30,17 @@ export default function StockCard({ stock }: { stock: any }) {
               {stock.changePct >= 0 ? "+" : ""}{stock.changePct.toFixed(2)}%
             </div>
             <div className="text-xs text-slate-400 mt-1">{stock.marketCap}</div>
-          </div>
         </div>
+      </div>
 
         <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <BadgeHalal status={stock.halalStatus} />
+        <div className="flex items-center gap-3">
+          <BadgeHalal status={stock.halalStatus} />
             <div className="text-sm text-slate-600 font-medium">{stock.halalScore}% purity</div>
-          </div>
-          <div className="text-xs text-slate-400">Vol • {stock.volume ?? "—"}</div>
         </div>
-      </Link>
+          <div className="text-xs text-slate-400">Vol • {stock.volume ?? "—"}</div>
+      </div>
+    </Link>
     </motion.div>
   );
 }
